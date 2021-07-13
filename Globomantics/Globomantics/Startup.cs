@@ -46,6 +46,15 @@ namespace Globomantics
                 app.UseDeveloperExceptionPage();
             }
 
+            // Oprogramowanie poœrednicz¹ce do plików statycznych
+            app.UseStaticFiles();
+
+            // Uwierzytelnianie - Understanding ASP.NET Core Security
+            //app.UseAuthentication();
+
+            // Przekierowanie ¿¹dañ HTTP do ¿¹dañ HTTPS, aby zmusisæ urzytkowników do korzystania z protoko³u TLS
+            app.UseHttpsRedirection();
+
             // Oprogramowanie poœrednicz¹ce routingu jest pod³¹czane do potoku
             // Metoda sprawdzaj¹ca zarejestrowane punkty koñcowe
             app.UseRouting();
