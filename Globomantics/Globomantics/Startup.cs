@@ -55,14 +55,13 @@ namespace Globomantics
             // Przekierowanie ¿¹dañ HTTP do ¿¹dañ HTTPS, aby zmusisæ urzytkowników do korzystania z protoko³u TLS
             app.UseHttpsRedirection();
 
-            // Oprogramowanie poœrednicz¹ce routingu jest pod³¹czane do potoku
             // Metoda sprawdzaj¹ca zarejestrowane punkty koñcowe
             app.UseRouting();
 
             // Metoda s³u¿¹ca do rejestrowania punktów koñcowych
             app.UseEndpoints(endpoints =>
             {
-                // Dziêki MapGet mo¿emy mapowaæ wzglêdny adres URL bezpoœrednio na lambdê, która okreœla co siê stanie, je¿eli ta œciezka
+                // Dziêki MapGet mo¿emy mapowaæ wzglêdny adres URL bezpoœrednio na lambdê, która okreœla co siê stanie, je¿eli ta œcie¿ka
                 // zostanie trafiona
                 //endpoints.MapGet("/", async context =>
                 //{
