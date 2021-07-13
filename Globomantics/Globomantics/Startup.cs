@@ -30,7 +30,8 @@ namespace Globomantics
             services.AddControllersWithViews();
 
             // Za ka¿dym razem, gdy jakiœ typ prosi o obiekt IConferenceService, podaj wyst¹pienie ConferenceApiService
-            services.AddSingleton<IConferenceService, ConferenceApiService>();
+            services.AddSingleton<IConferenceService, ConferenceMemoryService>();
+            services.AddSingleton<IProposalService, ProposalMemoryService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
