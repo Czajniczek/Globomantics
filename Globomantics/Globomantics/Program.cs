@@ -11,14 +11,15 @@ namespace Globomantics
 {
     public class Program
     {
-        public static void Main(string[] args)
+        public static void Main(string[] args) //Punkt wejœcia aplikacji. Metoda Main konfiguruje ASP.NET Core i uruchamia j¹
         {
-            CreateHostBuilder(args).Build().Run();
+            //Aplikacja pocz¹tkowo uruchamiana jest jako aplikacja wiersza poleceñ
+            CreateHostBuilder(args).Build().Run(); //Od tego momentu aplikacja staje siê aplikacj¹ ASP.NET Core
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
             Host.CreateDefaultBuilder(args)
-                .ConfigureWebHostDefaults(webBuilder =>
+                .ConfigureWebHostDefaults(webBuilder => //Konfiguracja hosta sieci Web przy u¿yciu wartoœci domyœlnych
                 {
                     webBuilder.UseStartup<Startup>();
                 });
