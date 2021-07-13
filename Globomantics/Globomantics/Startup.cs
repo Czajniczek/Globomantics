@@ -1,3 +1,4 @@
+using Globomantics.Services;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -25,6 +26,9 @@ namespace Globomantics
             //  a¿ aplikacja zostanie zamkniêta
 
             services.AddControllersWithViews();
+
+            services.AddSingleton<IConferenceService, ConferenceApiService>(); //Za ka¿dym razem, gdy jakiœ typ prosi o obiekt IConferenceService,
+                                                                               //podaj wyst¹pienie ConferenceApiService
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
