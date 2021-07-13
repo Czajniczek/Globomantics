@@ -16,6 +16,15 @@ namespace Globomantics
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services) //Wstrzykiwanie zale¿noœci
         {
+            //Mechanizm iniekcji zale¿noœci zale¿y od kontenera Inversion of Control (IoC)
+            //Okres istenienia obiektu jest zarz¹dzany przez kontener
+            //Czas ¿ycia instancji:
+            //• Transient (przejœciowy okres istenienia) - nowe wyst¹pienie typu jest tworzone za ka¿dym razem, gdy jest o to proszone
+            //• Scoped (okres istnienia z zakresem) - wyst¹pienie bêdzie istnieæ do momentu ca³kowitego obs³u¿enia ¿¹dania internetowego
+            //• Singleton (pojednczy okres istnienia) - po utworzeniu wystapienia to samo wyst¹pienie bêdzie dostarczane za ka¿dym razem, 
+            //  a¿ aplikacja zostanie zamkniêta
+
+            services.AddControllersWithViews();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
