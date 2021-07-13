@@ -11,9 +11,10 @@ namespace Globomantics
 {
     public class Program
     {
-        public static void Main(string[] args) // Punkt wejœcia aplikacji. Metoda Main konfiguruje ASP.NET Core i uruchamia j¹
+        // Punkt wejœcia aplikacji. Metoda Main konfiguruje ASP.NET Core i uruchamia j¹
+        // Aplikacja pocz¹tkowo uruchamiana jest jako aplikacja wiersza poleceñ
+        public static void Main(string[] args)
         {
-            // Aplikacja pocz¹tkowo uruchamiana jest jako aplikacja wiersza poleceñ
             CreateHostBuilder(args).Build().Run(); //Od tego momentu aplikacja staje siê aplikacj¹ ASP.NET Core
         }
 

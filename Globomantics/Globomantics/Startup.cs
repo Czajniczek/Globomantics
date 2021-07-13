@@ -16,7 +16,7 @@ namespace Globomantics
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
 
-        // Metoda odpowiadaj¹ca za wstrzykiwanie zale¿noœci
+        // Metoda odpowiadaj¹ca za wstrzykiwanie zale¿noœci (Dependency Injection)
         public void ConfigureServices(IServiceCollection services)
         {
             // Mechanizm iniekcji zale¿noœci zale¿y od kontenera Inversion of Control (IoC)
@@ -34,25 +34,36 @@ namespace Globomantics
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        
+
         // Metoda konfiguruj¹ca potok ¿¹dañ HTTP ASP.NET Core. Potok okreœla, w jaki sposób aplikacja bêdzie odpowiadaæ na ¿¹dania HTTP.
         // Poszczególne czêœci, które tworz¹ potok, nazywane s¹ oprogramowaniem poœrednicz¹cym (Middleware)
         // Przyk³ad: Auth => MVC => Static Files
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            // Tryb programisty, wyœwietlaj¹cy stronê internetow¹ ze szczegó³ami b³êdu, je¿eli istnieje nieobs³ugiwany wyj¹tek.
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
             }
 
+            // Oprogramowanie poœrednicz¹ce routingu jest pod³¹czane do potoku
+            // Metoda sprawdzaj¹ca zarejestrowane punkty koñcowe
             app.UseRouting();
 
+            // Metoda s³u¿¹ca do rejestrowania punktów koñcowych
             app.UseEndpoints(endpoints =>
             {
-                endpoints.MapGet("/", async context =>
-                {
-                    await context.Response.WriteAsync("Hello World!");
-                });
+                // Dziêki MapGet mo¿emy mapowaæ wzglêdny adres URL bezpoœrednio na lambdê, która okreœla co siê stanie, je¿eli ta œciezka
+                // zostanie trafiona
+                //endpoints.MapGet("/", async context =>
+                //{
+                //    await context.Response.WriteAsync("Hello World!");
+                //});
+
+                // Dziêki MapControllerRoute mo¿na okreœliæ szablon trasy
+                endpoints.MapControllerRoute(
+                    name: "default",
+                    pattern: "{controller=Conference}/{action=Index}/{id?}");
             });
         }
     }
