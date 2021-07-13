@@ -15,23 +15,29 @@ namespace Globomantics
     {
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
-        public void ConfigureServices(IServiceCollection services) //Wstrzykiwanie zale¿noœci
+
+        // Metoda odpowiadaj¹ca za wstrzykiwanie zale¿noœci
+        public void ConfigureServices(IServiceCollection services)
         {
-            //Mechanizm iniekcji zale¿noœci zale¿y od kontenera Inversion of Control (IoC)
-            //Okres istenienia obiektu jest zarz¹dzany przez kontener
-            //Czas ¿ycia instancji:
-            //• Transient (przejœciowy okres istenienia) - nowe wyst¹pienie typu jest tworzone za ka¿dym razem, gdy jest o to proszone
-            //• Scoped (okres istnienia z zakresem) - wyst¹pienie bêdzie istnieæ do momentu ca³kowitego obs³u¿enia ¿¹dania internetowego
-            //• Singleton (pojednczy okres istnienia) - po utworzeniu wystapienia to samo wyst¹pienie bêdzie dostarczane za ka¿dym razem, 
-            //  a¿ aplikacja zostanie zamkniêta
+            // Mechanizm iniekcji zale¿noœci zale¿y od kontenera Inversion of Control (IoC)
+            // Okres istenienia obiektu jest zarz¹dzany przez kontener
+            // Czas ¿ycia instancji:
+            // • Transient (przejœciowy okres istenienia) - nowe wyst¹pienie typu jest tworzone za ka¿dym razem, gdy jest o to proszone
+            // • Scoped (okres istnienia z zakresem) - wyst¹pienie bêdzie istnieæ do momentu ca³kowitego obs³u¿enia ¿¹dania internetowego
+            // • Singleton (pojednczy okres istnienia) - po utworzeniu wystapienia to samo wyst¹pienie bêdzie dostarczane za ka¿dym razem, 
+            //   a¿ aplikacja zostanie zamkniêta
 
             services.AddControllersWithViews();
 
-            services.AddSingleton<IConferenceService, ConferenceApiService>(); //Za ka¿dym razem, gdy jakiœ typ prosi o obiekt IConferenceService,
-                                                                               //podaj wyst¹pienie ConferenceApiService
+            // Za ka¿dym razem, gdy jakiœ typ prosi o obiekt IConferenceService, podaj wyst¹pienie ConferenceApiService
+            services.AddSingleton<IConferenceService, ConferenceApiService>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
+        
+        // Metoda konfiguruj¹ca potok ¿¹dañ HTTP ASP.NET Core. Potok okreœla, w jaki sposób aplikacja bêdzie odpowiadaæ na ¿¹dania HTTP.
+        // Poszczególne czêœci, które tworz¹ potok, nazywane s¹ oprogramowaniem poœrednicz¹cym (Middleware)
+        // Przyk³ad: Auth => MVC => Static Files
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
             if (env.IsDevelopment())
