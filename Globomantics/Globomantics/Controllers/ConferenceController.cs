@@ -36,7 +36,7 @@ namespace Globomantics.Controllers
         {
             if (ModelState.IsValid) await conferenceService.Add(model);
 
-            return RedirectToPage("Index");
+            return RedirectToAction("Index");
         }
     }
 }
