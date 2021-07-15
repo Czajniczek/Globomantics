@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 
 namespace Globomantics
 {
+    // Klasa konfiguruj¹ca aplikacjê
     public class Startup
     {
         // This method gets called by the runtime. Use this method to add services to the container.
@@ -20,9 +21,13 @@ namespace Globomantics
         public void ConfigureServices(IServiceCollection services)
         {
             // Mechanizm iniekcji zale¿noœci zale¿y od kontenera Inversion of Control (IoC)
+            // Zwykle podczas uruchamiana aplikacji typy takie jak klasa s¹ rejestrowane w kontenerze
+            // W warunkach iniekcji zale¿noœci (Dependency Injection) te typy nazywane s¹ us³ugami
+            // Po zarejestrowaniu inne typy mog¹ poprosiiæ kontener o wyst¹pienie tego typu
+
             // Okres istenienia obiektu jest zarz¹dzany przez kontener
             // Czas ¿ycia instancji:
-            // • Transient (przejœciowy okres istenienia) - nowe wyst¹pienie typu jest tworzone za ka¿dym razem, gdy jest o to proszone
+            // • Transient (przejœciowy okres istnienia) - nowe wyst¹pienie typu jest tworzone za ka¿dym razem, gdy jest o to proszone
             // • Scoped (okres istnienia z zakresem) - wyst¹pienie bêdzie istnieæ do momentu ca³kowitego obs³u¿enia ¿¹dania internetowego
             // • Singleton (pojednczy okres istnienia) - po utworzeniu wystapienia to samo wyst¹pienie bêdzie dostarczane za ka¿dym razem, 
             //   a¿ aplikacja zostanie zamkniêta
@@ -41,7 +46,7 @@ namespace Globomantics
         // Przyk³ad: Auth => MVC => Static Files
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            // Tryb programisty, wyœwietlaj¹cy stronê internetow¹ ze szczegó³ami b³êdu, je¿eli istnieje nieobs³ugiwany wyj¹tek.
+            // Tryb programisty, wyœwietlaj¹cy stronê internetow¹ ze szczegó³ami b³êdu, je¿eli istnieje nieobs³ugiwany wyj¹tek
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -53,7 +58,7 @@ namespace Globomantics
             // Uwierzytelnianie - Understanding ASP.NET Core Security
             //app.UseAuthentication();
 
-            // Przekierowanie ¿¹dañ HTTP do ¿¹dañ HTTPS, aby zmusisæ urzytkowników do korzystania z protoko³u TLS
+            // Przekierowanie ¿¹dañ HTTP do ¿¹dañ HTTPS, aby zmusiæ urzytkowników do korzystania z protoko³u TLS
             app.UseHttpsRedirection();
 
             // Metoda sprawdzaj¹ca zarejestrowane punkty koñcowe

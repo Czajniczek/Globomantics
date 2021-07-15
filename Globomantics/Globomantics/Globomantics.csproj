@@ -1,14 +1,14 @@
 <Project Sdk="Microsoft.NET.Sdk.Web">
 
-	<PropertyGroup>
-		<!--Wartość wewnątrz węzła nazywana jest monikerem. Określa on, na której wersji .NET Core uruchomiona jest aplikacja.
+  <PropertyGroup>
+    <!--Wartość wewnątrz węzła nazywana jest monikerem. Określa on, na której wersji .NET Core uruchomiona jest aplikacja.
 	  Moniker platformy docelowej (TFM) to standardowy format tokenu służący do określania docelowej platformy aplikacji lub biblioteki 
 	  platformy .NET.-->
-		<TargetFramework>net5.0</TargetFramework>
-	</PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
 
-	<ItemGroup>
-		<ProjectReference Include="..\Shared\Shared.csproj" />
-	</ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Shared\Shared.csproj" />
+  </ItemGroup>
 
 </Project>
