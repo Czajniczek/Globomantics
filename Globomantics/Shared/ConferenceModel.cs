@@ -16,9 +16,9 @@ namespace Shared.Models
 
         public string Name { get; set; }
 
-        public DateTime Start { get; set; }
-
         public string Location { get; set; }
+
+        public DateTime Start { get; set; }
 
         // Łączna liczba uczestników
         [DisplayName("Attendee total")]

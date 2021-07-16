@@ -15,24 +15,24 @@ namespace Globomantics.Services
             {
                 Id = 1,
                 ConferenceId = 1,
-                Speaker = "Roland Guijt",
-                Title = "Understanding ASP.NET Core Security"
+                Speaker = "Gabriel Czajkowski",
+                Title = "Tytuł"
             });
 
             proposals.Add(new ProposalModel
             {
                 Id = 2,
                 ConferenceId = 2,
-                Speaker = "John Reynolds",
-                Title = "Starting Your Developer Career"
+                Speaker = "Mateusz Paszko",
+                Title = "Tytuł"
             });
 
             proposals.Add(new ProposalModel
             {
                 Id = 3,
                 ConferenceId = 2,
-                Speaker = "Stan Lipens",
-                Title = "ASP.NET Core TagHelpers"
+                Speaker = "Marian Paździoch",
+                Title = "Tytuł"
             });
         }
 

@@ -51,7 +51,7 @@ namespace Globomantics
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
 
-        // Metoda konfiguruj¹ca potok ¿¹dañ HTTP ASP.NET Core. Potok okreœla, w jaki sposób aplikacja bêdzie odpowiadaæ na ¿¹dania HTTP.
+        // Metoda konfiguruj¹ca potok ¿¹dañ HTTP ASP.NET Core. Potok okreœla, w jaki sposób aplikacja bêdzie odpowiadaæ na ¿¹dania HTTP
         // Poszczególne czêœci, które tworz¹ potok, nazywane s¹ oprogramowaniem poœrednicz¹cym (Middleware)
         // Przyk³ad: Auth => MVC => Static Files
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)

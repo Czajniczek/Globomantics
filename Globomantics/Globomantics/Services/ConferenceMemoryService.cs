@@ -15,19 +15,19 @@ namespace Globomantics.Services
             conferences.Add(new ConferenceModel
             {
                 Id = 1,
-                Name = "Pluralsight Live!",
-                Location = "Salt Lake City",
-                Start = new DateTime(2017, 8, 12),
-                AttendeeTotal = 2132
+                Name = "Konferencja 1",
+                Location = "Warszawa",
+                Start = new DateTime(2021, 7, 16),
+                AttendeeTotal = 1234
             });
 
             conferences.Add(new ConferenceModel
             {
                 Id = 2,
-                Name = "GeekConf",
-                Location = "San Francisco",
-                Start = new DateTime(2017, 10, 18),
-                AttendeeTotal = 3210
+                Name = "Konferencja 2",
+                Location = "Białystok",
+                Start = new DateTime(2021, 7, 17),
+                AttendeeTotal = 4321
             });
         }
 
