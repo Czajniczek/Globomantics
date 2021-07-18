@@ -39,9 +39,14 @@ namespace API.Controllers
         {
             var addedProposal = proposalRepo.Add(model);
 
+            // CreatedAtRoute spowoduje zwrócenie kodu stanu HTTP 201, co oznacza, że został utworzony
+            // Zwraca on również adres URL, z którego można pobrać wprowadzone dane
+            // Jest to 3 model dojrzałości Richardsona - https://devkr.pl/2018/04/10/restful-api-richardson-maturity-model/
             return CreatedAtRoute("GetById", new { id = addedProposal.Id }, addedProposal);
         }
 
+        // System routingu wie, że musi szukać w żądaniu podanego elementu "proposalId" jako parametru dla atrybutu HttpPut
+        // Zostanie to dopasowane do parametru, który ma akcja
         [HttpPut("{proposalId}")]
         public IActionResult Approve(int proposalId)
         {

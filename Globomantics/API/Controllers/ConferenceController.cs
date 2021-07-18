@@ -5,6 +5,11 @@ using System.Linq;
 
 namespace API.Controllers
 {
+    // Użycie takiego wyrażenia zapewni, że nigdy nie będzie niezgodności między trasą a nazwą kontrolera
+    // Akcja nie jest wymieniona w trasie. Właśnie tego chcemy, ponieważ usługa REST powinna odpowiadać na czasowniki HTTP
+    // Sufiks "v1" to sposób na utworzenie wersji internetowego interfejsu API. Jeżeli pojawi się wersja 2 ze zmienionymi
+    // kontrolerami, można zmienić "v1" na "v2", a następnie udostępnić wersje "v1" i "v2" pod tym samym adresem URL,
+    // zapewniając kompatybilność wsteczną
     [Route("v1/[controller]")]
     [ApiController]
     public class ConferenceController : ControllerBase

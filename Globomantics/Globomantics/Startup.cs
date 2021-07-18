@@ -28,7 +28,7 @@ namespace Globomantics
         // Metoda odpowiadaj¹ca za wstrzykiwanie zale¿noœci (Dependency Injection)
         public void ConfigureServices(IServiceCollection services)
         {
-            // Mechanizm iniekcji zale¿noœci zale¿y od kontenera Inversion of Control (IoC)
+            // Mechanizm iniekcji zale¿noœci zale¿y od kontenera IoC - Inversion of Control
             // Zwykle podczas uruchamiana aplikacji typy takie jak klasa s¹ rejestrowane w kontenerze
             // W warunkach iniekcji zale¿noœci (Dependency Injection) te typy nazywane s¹ us³ugami
             // Po zarejestrowaniu inne typy mog¹ poprosiiæ kontener o wyst¹pienie tego typu
