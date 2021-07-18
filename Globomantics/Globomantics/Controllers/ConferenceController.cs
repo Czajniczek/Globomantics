@@ -12,6 +12,9 @@ namespace Globomantics.Controllers
     {
         private readonly IConferenceService conferenceService;
 
+        // Obiekt zostanie automatycznie dostarczony przez kontener (IoC)
+        // Dzięki interfejsowi, kontroler jest oddzielony od rzeczywistej implementacji klasy
+        // Kontener może wstrzykiwać instancję dowolnej klasy, o ile implementuje interfejs
         public ConferenceController(IConferenceService conferenceService)
         {
             this.conferenceService = conferenceService;

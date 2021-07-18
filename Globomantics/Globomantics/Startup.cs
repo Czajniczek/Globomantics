@@ -42,7 +42,7 @@ namespace Globomantics
 
             services.AddControllersWithViews();
 
-            // Za ka¿dym razem, gdy jakiœ typ prosi o obiekt IConferenceService, podaj wyst¹pienie ConferenceApiService
+            // Za ka¿dym razem, gdy jakiœ typ prosi o obiekt IConferenceService, podaj wyst¹pienie ConferenceMemoryService
             services.AddSingleton<IConferenceService, ConferenceMemoryService>();
             services.AddSingleton<IProposalService, ProposalMemoryService>();
 

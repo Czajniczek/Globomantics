@@ -7,6 +7,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Globomantics", "Globomantic
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Shared", "Shared\Shared.csproj", "{B7EBA789-E013-481D-B16B-7274E1DE5CB0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{AE6C504E-E738-408D-81E6-872B22056D68}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{B7EBA789-E013-481D-B16B-7274E1DE5CB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7EBA789-E013-481D-B16B-7274E1DE5CB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7EBA789-E013-481D-B16B-7274E1DE5CB0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE6C504E-E738-408D-81E6-872B22056D68}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE6C504E-E738-408D-81E6-872B22056D68}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE6C504E-E738-408D-81E6-872B22056D68}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE6C504E-E738-408D-81E6-872B22056D68}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
