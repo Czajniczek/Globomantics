@@ -11,9 +11,13 @@ namespace Globomantics.Services
     {
         private readonly HttpClient client;
 
+        //public ConferenceApiService(IHttpClientFactory httpClientFactory)
+        //{
+        //    client = httpClientFactory.CreateClient("GlobomanticsApi");
+        //}
+
         public ConferenceApiService(HttpClient httpClient)
         {
-            //this.client = httpClient;
             httpClient.BaseAddress = new Uri("http://localhost:5000");
             client = httpClient;
         }

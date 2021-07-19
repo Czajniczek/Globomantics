@@ -47,13 +47,15 @@ namespace Globomantics
             //services.AddSingleton<IProposalService, ProposalMemoryService>();
 
             // Korzystanie z API zamiast z danych w pamiêci
-            services.AddSingleton<IConferenceService, ConferenceApiService>();
+            //services.AddSingleton<IConferenceService, ConferenceApiService>();
             services.AddSingleton<IProposalService, ProposalApiService>();
 
             // Dodanie klienta HTTP. HttpClient to obiekt, za pomoc¹ którego mo¿na wykonywaæ ¿¹dania HTTP
             // W ten sposób mo¿na zarejestrowaæ wielu HttpClients, którzy u¿ywaj¹ ró¿nych nazw
             // Podstawowy adres URL ustawiany jest na adres URL interfejsu API 
             services.AddHttpClient("GlobomanticsApi", c => c.BaseAddress = new Uri("http://localhost:5000"));
+
+            services.AddHttpClient<IConferenceService, ConferenceApiService>();
 
             // Opcje
             services.Configure<GlobomanticsOptions>(configuration.GetSection("Globomantics"));

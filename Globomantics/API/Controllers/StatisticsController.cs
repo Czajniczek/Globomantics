@@ -14,6 +14,7 @@ namespace API.Controllers
         {
             this.repo = repo;
         }
+
         public StatisticsModel Get()
         {
             return repo.GetStatistics();
