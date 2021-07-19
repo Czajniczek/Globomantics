@@ -22,6 +22,7 @@ namespace Globomantics
             Host.CreateDefaultBuilder(args)
                 .ConfigureWebHostDefaults(webBuilder => // Konfiguracja hosta sieci Web przy u¿yciu wartoœci domyœlnych
                 {
+                    webBuilder.UseUrls("https://localhost:5001");
                     webBuilder.UseStartup<Startup>();
                 });
     }
