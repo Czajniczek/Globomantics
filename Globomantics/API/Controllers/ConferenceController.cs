@@ -25,8 +25,11 @@ namespace API.Controllers
         {
             var conferences = repo.GetAll();
 
+            // Gdy nie zostaną znalezione żadne konferencje, metoda zwróci "NoContentResult", co da w wyniku kod stanu HTTP 204
+            // dając wywołującemu wrażenie, że nic nie zostało znalezione
             if (!conferences.Any()) return new NoContentResult();
 
+            // HTTP 200
             return new ObjectResult(conferences);
         }
 
