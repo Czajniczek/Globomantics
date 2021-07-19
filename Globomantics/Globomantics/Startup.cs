@@ -57,7 +57,7 @@ namespace Globomantics
 
             services.AddHttpClient<IConferenceService, ConferenceApiService>();
 
-            // Opcje
+            // Strongly Typing Application Settings
             services.Configure<GlobomanticsOptions>(configuration.GetSection("Globomantics"));
         }
 
