@@ -1,4 +1,4 @@
-# Globomantics - Training application in .NET 5
+# Globomantics - Training MVC with API application in .NET 5
 
 Globomantics is a company that provides a web application for conference organisers. 
 
