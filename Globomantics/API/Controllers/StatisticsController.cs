@@ -6,7 +6,7 @@ namespace API.Controllers
 {
     [Route("v1/[controller]")]
     [ApiController]
-    public class StatisticsController: ControllerBase
+    public class StatisticsController : ControllerBase
     {
         private readonly IStatisticsRepo repo;
 
